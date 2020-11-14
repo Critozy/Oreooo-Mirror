@@ -10,7 +10,7 @@ if [ -f $file ] ; then
 fi
 tracker="[$tracker_list]"
 export MAX_DOWNLOAD_SPEED=0
-export MAX_CONCURRENT_DOWNLOADS=50
+export MAX_CONCURRENT_DOWNLOADS=10
 aria2c --enable-rpc --rpc-listen-all=false --rpc-listen-port 6800 --check-certificate=false\
    --max-connection-per-server=10 --rpc-max-request-size=1024M \
    --bt-tracker=$tracker --bt-max-peers=0 --bt-tracker-connect-timeout=300 --bt-stop-timeout=300 --seed-time=0.01 --min-split-size=10M \

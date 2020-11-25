@@ -9,21 +9,21 @@ LOGGER = logging.getLogger(__name__)
 
 MAGNET_REGEX = r"magnet:\?xt=urn:btih:[a-zA-Z0-9]*"
 
-URL_REGEX = r"(?:(?:http?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
+URL_REGEX = r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "📤"
-    STATUS_DOWNLOADING = "📥"
-    STATUS_WAITING = "Queued...📝"
-    STATUS_FAILED = "Failed 🚫. Cleaning download"
-    STATUS_CANCELLED = "Cancelled ❎"
-    STATUS_ARCHIVING = "Archiving...🔐"
-    STATUS_EXTRACTING = "Extracting...📂"
+    STATUS_UPLOADING = "Appurōdo 📤"
+    STATUS_DOWNLOADING = "Daunrōdo 📥"
+    STATUS_WAITING = "Matteimasu...📝"
+    STATUS_FAILED = "Shippai 🚫"
+    STATUS_CANCELLED = "Kyanseru ❎"
+    STATUS_ARCHIVING = "Ākaibu...🔐"
+    STATUS_EXTRACTING = "Ekisu...📂"
 
 
 PROGRESS_MAX_SIZE = 100 // 8
-PROGRESS_INCOMPLETE = ['🟡', '🟡', '🟡', '🟡', '🟡', '🟡', '🟡']
+PROGRESS_INCOMPLETE = ['✦', '✦', '✦', '✦', '✦', '✦', '✦']
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
@@ -80,10 +80,10 @@ def get_progress_bar_string(status):
     p = min(max(p, 0), 100)
     cFull = p // 8
     cPart = p % 8 - 1
-    p_str = '🟢' * cFull
+    p_str = '✦' * cFull
     if cPart >= 0:
         p_str += PROGRESS_INCOMPLETE[cPart]
-    p_str += '🔴' * (PROGRESS_MAX_SIZE - cFull)
+    p_str += '✧' * (PROGRESS_MAX_SIZE - cFull)
     p_str = f"[{p_str}]"
     return p_str
 

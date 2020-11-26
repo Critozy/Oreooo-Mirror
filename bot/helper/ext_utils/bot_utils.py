@@ -13,13 +13,13 @@ URL_REGEX = r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Appurōdo 📤"
-    STATUS_DOWNLOADING = "Daunrōdo 📥"
-    STATUS_WAITING = "Matteimasu...📝"
-    STATUS_FAILED = "Shippai 🚫"
-    STATUS_CANCELLED = "Kyanseru ❎"
-    STATUS_ARCHIVING = "Ākaibu...🔐"
-    STATUS_EXTRACTING = "Ekisu...📂"
+    STATUS_UPLOADING = "📤"
+    STATUS_DOWNLOADING = "📥"
+    STATUS_WAITING = "📝"
+    STATUS_FAILED = "🚫"
+    STATUS_CANCELLED = "❎"
+    STATUS_ARCHIVING = "🔐"
+    STATUS_EXTRACTING = "📂"
 
 
 PROGRESS_MAX_SIZE = 100 // 8

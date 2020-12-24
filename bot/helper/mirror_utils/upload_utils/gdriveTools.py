@@ -484,7 +484,7 @@ class GoogleDriveHelper:
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
                                  title = 'Misaka Bot Search',
                                  author_name='Misaka Bot',
-                                 author_url='https://github.com/LuqmanReburn/VPS-Mirror-Arata',
+                                 author_url='https://github.com/LuqmanReburn/Oreooo-Mirror',
                                  html_content=content)
         return
 

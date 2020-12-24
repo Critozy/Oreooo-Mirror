@@ -137,6 +137,54 @@ Note :- Above are the supported url shorteners. Except these only some url short
 - **SHORTENER_API**: Fill your shortener api key if you are using shortener.
 
 Note: You can limit maximum concurrent downloads by changing the value of MAX_CONCURRENT_DOWNLOADS in aria.sh. By default, it's set to 4
+
+## Deploying on Heroku
+
+- Run the script to generate token file(token.pickle) for Google Drive:
+```
+python3 generate_drive_token.py
+```
+- Install [Heroku cli](https://devcenter.heroku.com/articles/heroku-cli)
+- Login into your heroku account with command:
+```
+heroku login
+```
+- Create a new heroku app:
+```
+heroku create appname	
+```
+- Select This App in your Heroku-cli: 
+```
+heroku git:remote -a appname
+```
+- Change Dyno Stack to a Docker Container:
+```
+heroku stack:set container
+```
+- Add Heroku Postgres (only if you are deploying it for the 1st time)
+```
+heroku addons:create heroku-postgresql
+```
+- Add Private Credentials and Config Stuff:
+```
+git add -f credentials.json token.pickle config.env heroku.yml
+```
+- Commit new changes:
+```
+git commit -m "Added Creds."
+```
+- Push Code to Heroku:
+```
+git push heroku master --force
+```
+- Restart Worker by these commands:
+```
+heroku ps:scale worker=0
+```
+```
+heroku ps:scale worker=1	 	
+```
+
  
 ## Getting Google OAuth API credential file
 

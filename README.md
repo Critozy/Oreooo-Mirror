@@ -1,4 +1,4 @@
-# Important - Read these points first
+# REPO MAINTAINANCE (DON'T FORK OR USE IT)
 - Original repo is https://github.com/lzzy12/python-aria-mirror-bot
 - I have collected some cool features from various repositories and merged them in one.
 - So, credits goes to original repo holder, not to me. I have just collected them.
